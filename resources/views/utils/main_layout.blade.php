@@ -17,6 +17,10 @@
 
 <body>
     {{-- Todo código em comum aqui! Ex: Navbar, sidebar, footer --}}
+    <header>
+        
+    </header>
+
 
 
     @yield('content')
