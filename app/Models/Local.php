@@ -34,4 +34,9 @@ class Local extends Model
         }
         return null;
     }
+
+    public function local()
+    {
+        return $this->belongsTo(Room::class);
+    }
 }

@@ -9,4 +9,9 @@ class Room extends Model
 {
     /** @use HasFactory<\Database\Factories\RoomFactory> */
     use HasFactory;
+
+/*     public function rooms()
+    {
+        return $this->hasMany(Local::class);
+    } */
 }
