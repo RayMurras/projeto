@@ -1,13 +1,14 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-// Rota principal retorna a view 'main_layout'
-Route::get('/', function () {
-    return view('utils.main_layout');
-})->name('main');
+// Redirecionar '/' para '/home'
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-// Rota de fallback retorna a mesma view 'main_layout'
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+//Rota de fallback (Tratamento de exceção do 404)
 Route::fallback(function () {
-    return view('utils.main_layout');
+    return redirect()->route('home');
 });
