@@ -8,13 +8,10 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class RoomSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
          // Criando salas padrão na DB
-         foreach (Room::ROOMS_PORTO as $roomName => $localId) {
+         foreach (Room::ROOMS_PRT as $roomName => $localId) {
             Room::create([
                 'name' => $roomName, // Nome da sala
                 'id_local' => $localId, // ID do local associado

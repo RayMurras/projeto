@@ -15,7 +15,7 @@ class Room extends Model
 
     protected $fillable = ['name', 'id_local'];
 
-    const ROOMS_PORTO = [
+    const ROOMS_PRT = [
         'Sala 1' => 1,
         'Sala 2' => 1,
         'Sala 3' => 1,
@@ -39,9 +39,9 @@ class Room extends Model
     ];
 
     /**  Método para verificar se o nome da sala existe na lista de salas padrão. */
-    public static function isDefaultPorto($name)
+    public static function isDefaultPRT($name)
     {
-        return array_key_exists($name, self::ROOMS_PORTO);
+        return array_key_exists($name, self::ROOMS_PRT);
     }
 
     public static function isDefaultSJM($name)
@@ -49,15 +49,33 @@ class Room extends Model
         return array_key_exists($name, self::ROOMS_SJM);
     }
 
-    public static function isDefaultMDC($name)
+    public static function isDefaultMCV($name)
     {
         return array_key_exists($name, self::ROOMS_MDC);
     }
 
-    /** Método para adicionar novas salas ao banco. */
-    public static function addNewRoom($name)
+    /** Método para adicionar novas salas em PRT ao banco de dados. */
+    public static function addNewRoomPRT($name)
     {
-        if (!self::isDefault($name) && !self::where('name', $name)->exists()) {
+        if (!self::isDefaultPRT($name) && !self::where('name', $name)->exists()) {
+            return self::create(['name' => $name]);
+        }
+        return null;
+    }
+
+    /** Método para adicionar novas salas em SJM ao banco de dados. */
+    public static function addNewRoomSJM($name)
+    {
+        if (!self::isDefaultSJM($name) && !self::where('name', $name)->exists()) {
+            return self::create(['name' => $name]);
+        }
+        return null;
+    }
+
+    /** Método para adicionar novas salas em MCV ao banco de dados. */
+    public static function addNewRoomMCV($name)
+    {
+        if (!self::isDefaultMCV($name) && !self::where('name', $name)->exists()) {
             return self::create(['name' => $name]);
         }
         return null;

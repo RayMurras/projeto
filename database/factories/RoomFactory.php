@@ -38,7 +38,7 @@ class RoomFactory extends Factory
 
     public function definition(): array
     {
-        return $this->definitionForRooms(Room::ROOMS_PORTO);
+        return $this->definitionForRooms(Room::ROOMS_PRT);
     }
 
     public function definitionSJM(): array

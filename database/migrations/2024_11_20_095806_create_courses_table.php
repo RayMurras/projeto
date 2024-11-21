@@ -14,7 +14,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('quantity_places');
-            $table->unsignedBigInteger('id_user');
+            $table->unsignedBigInteger('id_user')->nullable();
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
         });
 

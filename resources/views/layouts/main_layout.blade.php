@@ -39,9 +39,9 @@
                             </div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-center">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="#">Login</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                            <li><a class="dropdown-item" href="#">Dashboard</a></li>
                         </ul>
                     </div>
                 </a>
