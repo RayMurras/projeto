@@ -9,9 +9,4 @@ class Course extends Model
 {
     /** @use HasFactory<\Database\Factories\CourseFactory> */
     use HasFactory;
-
-   /*  public function users()
-    {
-        return $this->hasMany(User::class);
-    } */
 }
