@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Repository;
 
-use App\Models\AbstractModel;
+use Illuminate\Database\Eloquent\Model;
 
 abstract class AbstractRepository
 {
-    protected AbstractModel $model;
+    protected Model $model;
 
-    public function __construct(AbstractModel $model)
+    public function __construct(Model $model)
     {
         $this->model = $model;
     }
 
-    public function find(int $id): ?AbstractModel
+    public function find(int $id): ?Model
     {
         return $this->model->find($id);
     }
@@ -23,7 +23,7 @@ abstract class AbstractRepository
         return $this->model->all();
     }
 
-    public function create(array $data): AbstractModel
+    public function create(array $data): Model
     {
         return $this->model->create($data);
     }
