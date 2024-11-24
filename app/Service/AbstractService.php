@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Service;
 
-use App\Repositories\AbstractRepository;
+use App\Repository\AbstractRepository;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 
