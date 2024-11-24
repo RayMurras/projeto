@@ -23,4 +23,13 @@ class UserService extends AbstractService
         ];
     }
 
+    protected function getUpdateValidationRules(): array
+    {
+        return [
+            'name' => 'sometimes|string|max:255|min:3', // 'nullable' means this field is optional
+            'email' => 'sometimes|email|unique:users,email', // Ignore uniqueness check for the current user's email
+            'password' => 'sometimes|min:8', // Only validate if the password is provided
+        ];
+    }
+
 }
